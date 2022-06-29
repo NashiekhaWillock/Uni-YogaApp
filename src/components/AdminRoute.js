@@ -3,7 +3,7 @@ import { useUserAuth } from '../context/userAuthContext'
 
 const AdminRoute = ({ children }) => {
     const { currentUser } = useUserAuth();
-    return currentUser.uid==="lBAjgfyPMfaKL78TGtltUEsvIme2" ? children : <Navigate replace to="/home" />
+    return currentUser.uid==="Replace with Users UID" ? children : <Navigate replace to="/home" />
 };
 
 export default AdminRoute;

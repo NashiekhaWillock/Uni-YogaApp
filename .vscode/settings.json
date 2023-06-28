@@ -1,0 +1,17 @@
+{
+    "cSpell.words": [
+        "Firestore",
+        "leaderboard"
+    ],
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.language.brackets": false,
+    "editor.language.colorizedBracketPairs": false,
+    "bracketPairColorizer.activeScopeCSS": [
+    
+        "borderStyle : solid",
+        "borderWidth : 1px",
+        "borderColor : {color}; opacity: 0.5"
+    ]
+}

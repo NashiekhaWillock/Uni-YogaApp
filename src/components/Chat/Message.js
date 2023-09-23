@@ -16,7 +16,7 @@ const Message = ({ msg }) => {
           
             <div>
                 <p className="msg-p normal-case m-2">{msg.text}
-                {msg.img && <img src={msg.img} alt =""/>}
+                {msg.img && <img src={msg.img} alt ="" className='w-full lg:max-w-sm'/>}
                 <span ref={ref}></span>
             </p>
                 </div>

@@ -15,7 +15,7 @@ const Quotes = () => {
   }, []);
 
   const getQuotes = () => {
-    let url = `https://gist.githubusercontent.com/NashWillock/81ca40fec97ba5880dfa066c15fce3e5/raw/8d3f467a2775598894326498dd2b7666b9ddd475/Quotes.json`;
+    let url = `https://gist.githubusercontent.com/NashiekhaWillock/81ca40fec97ba5880dfa066c15fce3e5/raw/8d3f467a2775598894326498dd2b7666b9ddd475/Quotes.json`;
     fetch(url)
       .then(res => res.json())
       .then(data => {

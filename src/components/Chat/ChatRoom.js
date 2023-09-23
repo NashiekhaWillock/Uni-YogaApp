@@ -66,29 +66,35 @@ const Chat = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     const value = text.trim();
-
+  
     if (img) {
       const imgRef = ref(
         storage,
         `images/${new Date().getTime()} - ${img.name}`
       );
-
+  
       try {
         const snapshot = await uploadBytesResumable(imgRef, img);
         const downloadURL = await getDownloadURL(snapshot.ref);
-        await DataService.addMessages({
-          text: value,
+  
+        // Combine text and image into a single message when an image is selected
+        const combinedMessage = {
+          text: value, // Text message
           createdAt: new Date(),
           uid: currentUser.uid,
           photoURL,
           img: downloadURL,
-        });
+        };
+  
+        // Send the combined message
+        await DataService.addMessages(combinedMessage);
       } catch (error) {
         console.error('Error uploading image:', error);
       }
     } else if (value.length > 0) {
+      // If there's no image but there is a text message, send the text message
       await DataService.addMessages({
         text: value,
         createdAt: new Date(),
@@ -96,10 +102,11 @@ const Chat = () => {
         photoURL,
       });
     }
-
+  
     setText('');
     setImg(null);
   };
+  
 
   return (
     <ChatRoomContainer>
